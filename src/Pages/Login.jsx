@@ -10,7 +10,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     if(username === 'mimi' && password === 'mimikay123'){
-      navigate("/dashboard")
+      navigate("/")
     }else{
       alert('Username or password incorrect')
     }
@@ -19,7 +19,7 @@ const Login = () => {
   return (
     <Layout>
       <div className='login-page'>
-        <h1>Login</h1>
+        <h1 className='h1'>Login</h1>
         <form className="form">
           <input className='username' type="text" placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)} />
           <input className='password' type="text" placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)} />

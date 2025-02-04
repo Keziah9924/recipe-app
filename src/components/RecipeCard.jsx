@@ -1,4 +1,14 @@
+// import React from 'react'
 import UseImage from "./UseImage"
+
+// const RecipeCard = (props) => {
+//   return (
+//     <div>RecipeCard</div>
+//   )
+// }
+
+// export default RecipeCard
+// 
 
 export default function RecipeCard({recipe}){
     return(
@@ -14,4 +24,4 @@ export default function RecipeCard({recipe}){
 
         </div>
     )
-}
+}   

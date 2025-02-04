@@ -107,55 +107,55 @@ img{
 
 @import "partials/recipe-section";
 
-.options-container{
-    box-shadow: 0 5px 10px var(--shadow-color);
-    padding: 1em;
-    border-radius: 5px;
-    border-left: .5em solid var(--primary-color);
-    border-color: var(--background-light);
-    margin-top: .1em;
+@import "partials/settings-Section";
+
+@import "partials/login-section";
+
+.register-section{
+    width: 24rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0  10px 10px -5px rgba(0, 0, 0, 0.4);
     display: flex;
-    gap: 1em;
-    .option{
-        height: 3.5em;
-        width: 3.5em;
-        box-shadow: 0 3px 6px var(--shadow-color);
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.5rem;
+    background-color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    margin: auto;
+    .register-form{
+        ::placeholder{
+            color: #fff;
+        }
+    }
+    .register{
+        color: #fff;
+        font-size: 1.5rem;
+    }
+    .input-section{
+        border-bottom: 1px;
+        border-color: 1 solid #575757;
+        width: 13rem;
+        background-color: transparent;
+        margin-bottom: 20px;
+    }
+    .register-form{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: auto;
+    margin-bottom: 1.25rem;
+        
+    }
+    .sign-btn{
+        color: var(--text-color);
+        margin-bottom: 10px;
+        
+
+    }
+    .log-link{
         align-items: center;
-        &.light{
-            background-color: #fff;
-        }
-        &.dark{
-            background-color: rgb(29,29,29);
-        }
-        .check{
-            height: 2.5em;
-            width: 2.5em;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 2px 5px var(--shadow-color);
-            svg{
-                height: 1.5em;
-                width: 1.5em;
-
-            }
-
-        }
-      
+        font-size: 0.75rem;
+        color: var(--text-light);
     }
-    .btn span{
-        display: inline-block;
-        margin-left: .5em;
-    }
-}
-.d-block h2{
-    font-size: 1.75em;
-    color: var(--text-color);
 }
 
 .main{
