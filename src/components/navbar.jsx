@@ -22,7 +22,18 @@ export default function Navbar(){
         name: "Settings",
         path: "/settings",
         icon: faCog
+      },
+      {
+        name: "login",
+        path: "/login",
+        icon: faCog
+      },
+      {
+        name: "Register",
+        path: "/register",
+        icon: faCog
       }
+      
     ]
     
     function closeSidebar(){

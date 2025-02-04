@@ -1,0 +1,57 @@
+.login-page{
+    width: 24rem;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px -5px rgba(0,0,0,0.04);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5em;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.2em;
+    .h1{
+        font-size: 1,5em;
+        color: #fff;
+    }
+    .form{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin-bottom: 1.25em;
+    ::placeholder{
+        color: #fff;
+    }
+    .button-link{
+        font-size: 0.75rem;
+        text-align: center;
+        color: white;
+    }
+
+    }
+    .username{
+        border-bottom: 1px;
+        border-color: 1 solid #575757;
+        width: 13rem;
+        background-color: transparent;
+        margin-bottom: 20px;
+        
+
+    }
+    .password{
+        border-bottom: 1px;
+        border-color: 1 solid #575757;
+        width: 13rem;
+        background-color: transparent;
+        margin-bottom: 20px;
+       
+        button{
+            color: #fff;
+            margin-bottom: 20px;
+        }
+       
+
+
+    }
+
+}
