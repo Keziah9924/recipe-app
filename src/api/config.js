@@ -5,7 +5,7 @@ let token = "";
 if (typeof window !== "undefined") token = localStorage.getItem("token") || "";
 
 export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-console.log(API_BASE_URL)
+export const API_RECIPE_URL = process.env.REACT_APP_RECIPE_API;
 
 export const default_headers = { authorization: `bearer ${token}` };
 
@@ -18,6 +18,15 @@ const API = axios.create({
         "Content-Type": "application/json",
     }
 });
+
+export const RECIPE_API = axios.create({
+    baseURL: API_RECIPE_URL,
+    headers: {
+        "Content-Type": "application/json",
+    }
+});
+
+console.log(RECIPE_API.getUri())
 
 const API_AUTH = axios.create({
     baseURL: API_BASE_URL,

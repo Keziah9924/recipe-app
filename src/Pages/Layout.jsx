@@ -6,9 +6,9 @@ const Layout = ({ children }) => {
     return (
         <>
             <Navbar />
-            <main className='p-6'>
-            {children}
-            </main>
+            <div style={{ padding: '100px 200px 300px 200px' }}>
+                {children}
+            </div>
             <Footer />
         </>
     )

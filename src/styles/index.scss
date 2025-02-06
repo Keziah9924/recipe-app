@@ -15,14 +15,13 @@
  }
 *{
     margin: 0;
-    padding: 0;
+    //padding: 0;
     box-sizing: border-box;
     
 }
 body{
     font-size: var(--font-size);
     font-family: 'Roboto','sans-serif';
-    padding-top: 55px;
     background-color: var(--background-light);
 }
 a{
@@ -293,4 +292,21 @@ img{
 
 .verify-button:hover {
   background-color: #fc508a;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+    
+    button{
+        border: 1px solid #ff0056;
+        outline: none;
+        background-color: #fff;
+        color: #0A0A0A;
+        padding: 5px 8px;
+        border-radius: 5px;
+    }
 }

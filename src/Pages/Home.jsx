@@ -7,7 +7,7 @@ import Layout from "./Layout";
 export default function Home() {
     return (
         <Layout>
-            <div>
+            <div style={{padding: "0 300px"}}>
                 <HeroSection />
                 <ImproveSkill />
                 <QouteSection />

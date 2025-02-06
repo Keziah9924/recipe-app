@@ -56,9 +56,11 @@ const VerifyOtp = () => {
         console.log(decodedOtp, userInputedOtp)
         if(Number(decodedOtp) === Number(userInputedOtp)){
             const response = await API.post('/user/new', newUserData)
-            console.log(response)
+
             if(response.data.code === 201){
                 alert('Registration successful')
+                localStorage.removeItem("newUserData")
+                localStorage.removeItem("otpToken")
                 return navigate('/login');
             }
         }
