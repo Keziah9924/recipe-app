@@ -130,14 +130,14 @@ export default function PreviousSearches() {
             </div>
 
             {/* Display paginated options */}
-            {/*<div className="previous-searches-container">
+            <div className="previous-searches-container">
                 {currentItems.map((item, index) => (
                     <p className="search-item" key={index}>{item}</p>
                 ))}
-            </div>*/}
+            </div>
 
             {/* Pagination controls */}
-            {/*<div className="pagination">
+            <div className="pagination">
                 <button
                     onClick={() => paginate(currentPage - 1)}
                     disabled={currentPage === 1}
@@ -151,7 +151,7 @@ export default function PreviousSearches() {
                 >
                     Next
                 </button>
-            </div>*/}
+            </div>
         </div>
     );
 }
