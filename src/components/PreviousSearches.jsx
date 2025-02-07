@@ -1,8 +1,7 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { RECIPE_API } from "../api/config";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import {FaSearch} from 'react-icons/fa'
 
 export default function PreviousSearches() {
     const searches = ['pizza', 'burger', 'cookies', 'juice', 'biriyani', 'salad', 'ice cream', 'lasagma', 'pudding', 'soup'];
@@ -97,11 +96,11 @@ export default function PreviousSearches() {
     return (
         <div className="previous-searches section">
             <h2>Previous searches</h2>
-            <div style={{display:"flex",justifyContent: 'space-between', alignItems: 'center'}}>
+            <div style={{ display: "flex", justifyContent: 'space-between', alignItems: 'center', gap:40 }}>
 
-                <div style={{width: '100%', flex: 0.3, display: 'flex', justifyContent: 'flex-end'}}>
+                <div style={{ width: '100%', flex: 0.35, display: 'flex' }}>
                     <span>Filter by </span>
-                    <select name="filter" id="filter" value={filterType} onChange={handleFilterChange} style={{width: '100%'}}>
+                    <select name="filter" id="filter" value={filterType} onChange={handleFilterChange} className="selectFilter">
                         <option value="default">Default</option>
                         <option value="categories">Categories</option>
                         <option value="area">Area</option>
@@ -109,35 +108,36 @@ export default function PreviousSearches() {
                     </select>
                 </div>
 
-                <div className="search-box">
-                    <button className="btn">
-                        <FontAwesomeIcon icon={faSearch} />
-                    </button>
-                    <input
-                        type="text"
-                        placeholder="Search for a recipe..."
-                        value={searchInput}
-                        onChange={handleSearchInputChange}
-                    />
+                <div style={{flex: 0.65}}>
+                    <div className="search-box">
+                        <button className="btn">
+                            <FaSearch />
+                        </button>
+                        <input
+                            type="text"
+                            placeholder="Search for a recipe..."
+                            value={searchInput}
+                            onChange={handleSearchInputChange}
+                        />
+                    </div>
+                    {/* Display suggestions */}
+                    <div className="suggestions-container">
+                        {suggestions.slice(indexOfFirstItem, indexOfLastItem).map((item, index) => (
+                            <p className="suggestion-item" key={index}>{item}</p>
+                        ))}
+                    </div>
                 </div>
             </div>
 
-            {/* Display suggestions */}
-            <div className="suggestions-container">
-                {suggestions.slice(indexOfFirstItem, indexOfLastItem).map((item, index) => (
-                    <p className="suggestion-item" key={index}>{item}</p>
-                ))}
-            </div>
-
             {/* Display paginated options */}
-            <div className="previous-searches-container">
+            {/*<div className="previous-searches-container">
                 {currentItems.map((item, index) => (
                     <p className="search-item" key={index}>{item}</p>
                 ))}
-            </div>
+            </div>*/}
 
             {/* Pagination controls */}
-            <div className="pagination">
+            {/*<div className="pagination">
                 <button
                     onClick={() => paginate(currentPage - 1)}
                     disabled={currentPage === 1}
@@ -151,7 +151,7 @@ export default function PreviousSearches() {
                 >
                     Next
                 </button>
-            </div>
+            </div>*/}
         </div>
     );
 }
