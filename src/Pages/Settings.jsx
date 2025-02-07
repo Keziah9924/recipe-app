@@ -2,8 +2,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCheck } from "@fortawesome/free-solid-svg-icons"
 
 import { useState, useEffect } from "react"
+import Layout from "./Layout"
 
-export default function Settings(){
+export default function Settings() {
     const [settings, setSettings] = useState({
         " --background-color": "#fff",
         "--background-light": "#fff",
@@ -12,16 +13,16 @@ export default function Settings(){
         " --text-color": "#0A0A0A",
         "--text-light": "#575757",
         " --font-size": "16px",
-         "--animation-speed": "1"
-        
+        "--animation-speed": "1"
+
     })
     useEffect(() => {
-       const root = document.documentElement
-       for(let key in settings){
-        root.style.setProperty(key, settings[key])
-       }
-    }, [settings] )
-    
+        const root = document.documentElement
+        for (let key in settings) {
+            root.style.setProperty(key, settings[key])
+        }
+    }, [settings])
+
     const [theme, setTheme] = useState("light")
     const themes = [
         {
@@ -39,35 +40,35 @@ export default function Settings(){
             "--text-light": "#eceaea"
         }
     ]
-    function changeTheme(i){
-        const _theme = {...themes[i]}
+    function changeTheme(i) {
+        const _theme = { ...themes[i] }
         setTheme(i == 0 ? "light" : "dark")
         //update setting
-        let _settings = {...settings}
-        for(let key in _theme){
+        let _settings = { ...settings }
+        for (let key in _theme) {
             _settings[key] = _theme[key]
         }
         setSettings(_settings)
     }
 
-    function changeColor(i){
+    function changeColor(i) {
         const _color = primaryColors[i]
-        let _settings = {...settings}
+        let _settings = { ...settings }
         _settings["--primary-color"] = _color
         setPrimaryColor(i)
         setSettings(_settings)
     }
 
-    function changeFontSize(i){
+    function changeFontSize(i) {
         const _size = fontSizes[i]
-        let _settings = {...settings}
+        let _settings = { ...settings }
         _settings["--font-size"] = _size.value
         setFontSize(i)
         setSettings(_settings)
     }
-    function changeAnimationSpeed(i){
+    function changeAnimationSpeed(i) {
         const _speed = animationSpeeds[i]
-        let _settings = {...settings}
+        let _settings = { ...settings }
         _settings["--animation-speed"] = _speed.value
         setAnimationSpeed(i)
         setSettings(_settings)
@@ -108,74 +109,76 @@ export default function Settings(){
             value: .5
         }
     ]
-    const [ primaryColor, setPrimaryColor] = useState(0)
+    const [primaryColor, setPrimaryColor] = useState(0)
     const [fontSize, setFontSize] = useState(1)
     const [animationSpeed, setAnimationSpeed] = useState(1)
 
-    return(
-        <div>
-            <div className="section d-block">
-                <h2>Prefered theme</h2>
-                <div  className="options-container">
-                    <div className="option light" onClick={() => changeTheme(0)}>
-                        { theme === "light" && (
-                            <div className="check">
-                            <FontAwesomeIcon icon={faCheck} />
+    return (
+        <Layout>
+            <div>
+                <div className="section d-block">
+                    <h2>Prefered theme</h2>
+                    <div className="options-container">
+                        <div className="option light" onClick={() => changeTheme(0)}>
+                            {theme === "light" && (
+                                <div className="check">
+                                    <FontAwesomeIcon icon={faCheck} />
+                                </div>
+                            )}
                         </div>
-                        ) } 
-                    </div>
-                    <div className="option dark" onClick={() => changeTheme(1)}>
-                    { theme === "dark" && (
-                            <div className="check">
-                            <FontAwesomeIcon icon={faCheck} />
+                        <div className="option dark" onClick={() => changeTheme(1)}>
+                            {theme === "dark" && (
+                                <div className="check">
+                                    <FontAwesomeIcon icon={faCheck} />
+                                </div>
+
+                            )}
+
                         </div>
-                            
-                        ) } 
-                        
+
                     </div>
 
                 </div>
-
-            </div>
-            <div className="section d-block">
-                <h2>Prefered color</h2>
-                <div  className="options-container">
-                    { primaryColors.map((color, index) => (
-                    <div className="option light" style={{backgroundColor: color}} onClick={() => changeColor(index)}>
-                        { primaryColor === index && (
-                            <div className="check">
-                            <FontAwesomeIcon icon={faCheck} />
-                        </div>
-                        ) } 
+                <div className="section d-block">
+                    <h2>Prefered color</h2>
+                    <div className="options-container">
+                        {primaryColors.map((color, index) => (
+                            <div className="option light" style={{ backgroundColor: color }} onClick={() => changeColor(index)}>
+                                {primaryColor === index && (
+                                    <div className="check">
+                                        <FontAwesomeIcon icon={faCheck} />
+                                    </div>
+                                )}
+                            </div>
+                        ))}
                     </div>
-                )) }
+                </div>
+
+                <div className="section d-block">
+                    <h2>Font Size</h2>
+                    <div className="options-container">
+                        {fontSizes.map((size, index) => (
+                            <button className="btn" onClick={() => changeFontSize(index)}>
+                                {size.title}
+                                {fontSize === index && <span><FontAwesomeIcon icon={faCheck} /></span>}
+                            </button>
+                        ))}
+
+                    </div>
+                </div>
+                <div className="section d-block">
+                    <h2>Animation speed</h2>
+                    <div className="options-container">
+                        {animationSpeeds.map((speed, index) => (
+                            <button className="btn" onClick={() => changeAnimationSpeed(index)}>
+                                {speed.title}
+                                {animationSpeed === index && <span><FontAwesomeIcon icon={faCheck} /></span>}
+                            </button>
+                        ))}
+
+                    </div>
                 </div>
             </div>
-
-            <div className="section d-block">
-                <h2>Font Size</h2>
-                <div  className="options-container">
-                    { fontSizes.map((size, index) => (
-                    <button className="btn" onClick={() => changeFontSize(index)}>
-                       {size.title} 
-                        { fontSize === index && <span><FontAwesomeIcon icon={faCheck} /></span>}
-                    </button>
-                )) }
-
-                </div>
-            </div>
-            <div className="section d-block">
-                <h2>Animation speed</h2>
-                <div  className="options-container">
-                    { animationSpeeds.map((speed, index) => (
-                    <button className="btn" onClick={() => changeAnimationSpeed(index)}>
-                       {speed.title} 
-                        { animationSpeed === index && <span><FontAwesomeIcon icon={faCheck} /></span>}
-                    </button>
-                )) }
-
-                </div>
-            </div>
-        </div>
+        </Layout>
     )
 }

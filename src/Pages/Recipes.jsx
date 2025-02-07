@@ -1,7 +1,8 @@
 import PreviousSearches from "../components/PreviousSearches"
 import RecipeCard from "../components/RecipeCard"
+import Layout from "./Layout"
 
-export default function Recipes(){
+export default function Recipes() {
     const recipes = [
         {
             title: "Fruit Salad",
@@ -12,7 +13,7 @@ export default function Recipes(){
             title: "Fruit Salad",
             image: "/images/food/115.jpg",
             authoring: "/images/top chef/15.jpg",
-            
+
         },
         {
             title: "Fruit Salad",
@@ -34,20 +35,21 @@ export default function Recipes(){
             image: "/images/food/119.jfif",
             authoring: "/images/top chef/19.jpg",
         }
-        ].sort(() => Math.random() - 0.5)
-   
-    return(
-        <div>
-       <PreviousSearches />
-       <div className="recipes-container">
-        {/* <RecipeCard /> */}
-        {recipes.map((recipe, index) => (
-            <RecipeCard key={index} recipe={recipe} />
-    
-    ) )}
-        
-       </div>
-       </div>
+    ].sort(() => Math.random() - 0.5)
+
+    return (
+        <Layout>
+            <div>
+                <PreviousSearches />
+                <div className="recipes-container">
+                    {/* <RecipeCard /> */}
+                    {recipes.map((recipe, index) => (
+                        <RecipeCard key={index} recipe={recipe} />
+
+                    ))}
+
+                </div>
+            </div>
+        </Layout>
     )
 }
- 
