@@ -7,7 +7,7 @@ const ProtectedRoute = ({ children }) => {
     const token = useAtomValue(AuthToken);
 
     if (!token) {
-        return <Navigate to="/login" />;
+        return <Navigate to="/login" replace />;
     }
 
     return children;

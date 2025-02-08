@@ -317,3 +317,14 @@ img{
     height: 35px;
     border-radius: 7px;
 }
+
+.ingredients-table{
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.ingredients-table tr td, th{
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px 0;
+}
