@@ -60,7 +60,7 @@ const RecipePage = () => {
     const instructions = formatInstructions(single.strInstructions);
 
     function getRandomPrice() {
-        return Math.floor(Math.random() * 20) + 1;
+        return Math.floor(Math.random() * 100) + 1;
     }
 
 
