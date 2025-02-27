@@ -26,7 +26,6 @@ export const RECIPE_API = axios.create({
     }
 });
 
-console.log(RECIPE_API.getUri())
 
 const API_AUTH = axios.create({
     baseURL: API_BASE_URL,

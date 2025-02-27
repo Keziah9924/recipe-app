@@ -48,7 +48,9 @@ export default function Recipes() {
                 axios.all([
                     (await RECIPE_API.get('/search.php?f=a')).data.meals,
                     (await RECIPE_API.get('/search.php?f=b')).data.meals,
-                    (await RECIPE_API.get('/search.php?f=c')).data.meals
+                    (await RECIPE_API.get('/search.php?f=c')).data.meals,
+                    (await RECIPE_API.get('/search.php?f=d')).data.meals,
+                    (await RECIPE_API.get('/search.php?f=e')).data.meals
                 ]).then(axios.spread((a, b, c) => {
                     setRecipes([...a, ...b, ...c]);
                 }));

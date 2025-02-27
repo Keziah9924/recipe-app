@@ -70,7 +70,7 @@ const RecipePage = () => {
         const { email: userEmail } = userData
 
         const paymentResponse = await axios.post(
-            `${process.env.REACT_APP_PAYSTACK_API}/transaction/initialize`,
+            `${process.env.REACT_APP_PAYSTACK_API}`,
             { email: userEmail, amount: (paymentAmount * 100), currency: 'GHS', callback_url: process.env.REACT_APP_CALLBACK_URL },
             {
                 headers: {
